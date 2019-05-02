@@ -23,7 +23,7 @@ services:
       - 'traefik.https.frontend.entryPoints=https' # delete for no remote access
       - 'traefik.https.frontend.auth.basic.users=${USERNAME}:${PASSWORD}' # delete for no remote access
 
-   deluge:
+  deluge:
     container_name: deluge
     image: linuxserver/deluge:latest
     restart: unless-stopped
@@ -36,7 +36,7 @@ services:
       - ${ROOT}/downloads:/downloads # downloads folder
       - ${ROOT}/config/deluge:/config # config files
 
-   jackett:
+  jackett:
     container_name: jackett
     image: linuxserver/jackett:latest
     restart: unless-stopped
@@ -59,7 +59,7 @@ services:
       - 'traefik.https.frontend.entryPoints=https' # delete for no remote access
       - 'traefik.https.frontend.auth.basic.users=${USERNAME}:${PASSWORD}' # delete for no remote access
 
-   nzbget:
+  nzbget:
     container_name: nzbget
     image: linuxserver/nzbget:latest
     restart: unless-stopped
@@ -81,7 +81,7 @@ services:
       - 'traefik.https.frontend.entryPoints=https' # delete for no remote access
       - 'traefik.https.frontend.auth.basic.users=${USERNAME}:${PASSWORD}' # delete for no remote access
 
-   sonarr:
+  sonarr:
     container_name: sonarr
     image: linuxserver/sonarr:latest
     restart: unless-stopped
@@ -105,7 +105,7 @@ services:
       - 'traefik.https.frontend.entryPoints=https' # delete for no remote access
       - 'traefik.https.frontend.auth.basic.users=${USERNAME}:${PASSWORD}' # delete for no remote access
 
-   radarr:
+  radarr:
     container_name: radarr
     image: linuxserver/radarr:latest
     restart: unless-stopped
@@ -129,7 +129,7 @@ services:
       - 'traefik.https.frontend.entryPoints=https' # delete for no remote access
       - 'traefik.https.frontend.auth.basic.users=${USERNAME}:${PASSWORD}' # delete for no remote access
 
-   plex-server:
+  plex-server:
     container_name: plex-server
     image: plexinc/pms-docker:latest
     restart: unless-stopped
@@ -141,7 +141,7 @@ services:
       - ${ROOT}/config/plex/transcode:/transcode # temp transcoded files
       - ${ROOT}/complete:/data # media library
 
-   traefik:
+  traefik:
     container_name: traefik
     image: traefik:latest
     restart: always
